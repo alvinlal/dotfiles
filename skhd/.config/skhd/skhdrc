@@ -1,0 +1,35 @@
+# Change focus between external displays (top and bottom)
+cmd - i : yabai -m display --focus north 
+cmd - m : yabai -m display --focus south 
+
+
+# Move window to prev and next space
+shift + alt - p : yabai -m window --space prev;
+shift + alt - n : yabai -m window --space next;
+
+# Move window to space
+shift + alt - 1 : yabai -m window --space 1;
+shift + alt - 2 : yabai -m window --space 2;
+shift + alt - 3 : yabai -m window --space 3;
+shift + alt - 4 : yabai -m window --space 4;
+shift + alt - 5 : yabai -m window --space 5;
+shift + alt - 6 : yabai -m window --space 6;
+shift + alt - 7 : yabai -m window --space 7;
+shift + alt - 8 : yabai -m window --space 8;
+shift + alt - 9 : yabai -m window --space 9;
+
+# Start / Stop yabai
+ctrl + alt - y : yabai --restart-service
+
+# Start / Stop skhd
+ctrl + alt - s : skhd --restart-service
+
+# Focus the next window of the same application in the stack
+cmd - j : yabai -m window --focus stack.next || yabai -m window --focus stack.first 
+
+# Focus the previous window of the same application in the stack
+cmd - k : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+
+# Focus linear
+cmd - l : yabai -m window --focus $(yabai -m query --windows | jq -r '.[] | select(.app == "Linear") | .id' | head -n 1)
+
