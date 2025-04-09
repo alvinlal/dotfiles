@@ -36,6 +36,7 @@ return {
 				"emmet_ls",
 				"prismals",
 				"pyright",
+				"terraformls",
 			},
 		})
 
@@ -49,6 +50,7 @@ return {
 				"eslint_d", -- js linter
 				"sql-formatter",
 				"graphql-language-service-cli",
+				"tflint",
 			},
 		})
 	end,
